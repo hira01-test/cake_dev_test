@@ -1,4 +1,5 @@
 .vagrant/*
+/build
 /Vendor
 /Plugin
 Berksfile
