@@ -6,13 +6,8 @@ php:
 env:
   - DB=mysql
 
-matrix:
-  include:
-    - php: 5.5
-      env:
-        - PHPCS=1
-
 before_script:
+  - sudo apt-get update
   - sudo apt-get install apache2 libapache2-mod-fastcgi
   - sudo cp ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf.default ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf
   - sudo a2enmod rewrite actions fastcgi alias
@@ -26,6 +21,7 @@ before_script:
   - curl -s http://getcomposer.org/installer | php
   - php composer.phar install --dev --no-interaction
   - sh -c "if [ '$DB' = 'mysql' ]; then mysql -e 'CREATE DATABASE cakephp_test;'; fi"
+  - mkdir ./app/tmp
   - chmod -R 777 ./app/tmp
   - echo "<?php
     class DATABASE_CONFIG {
@@ -69,7 +65,7 @@ before_script:
       }
     }
     }" > app/Config/database.php
-  - mysql cakephp_test < app/Config/sql/mysql.sql
+#  - mysql cakephp_test < app/Config/sql/mysql.sql
   
 script:
   - mkdir -p build/logs
