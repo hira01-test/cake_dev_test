@@ -3,9 +3,7 @@
     <filter>
         <blacklist>
             <directory suffix=".php">app/Config</directory>
-            <directory suffix=".php">app/Test</directory>
             <directory suffix=".php">app/Vendor</directory>
-            <directory suffix=".php">app/Vendor/pclzip-2-8-2</directory>
             <directory suffix=".php">Vendor</directory>
             <directory suffix=".php">Plugin</directory>
         </blacklist>
