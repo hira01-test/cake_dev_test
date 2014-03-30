@@ -27,7 +27,7 @@ before_script:
   - php composer.phar install --dev --no-interaction
   - sh -c "if [ '$DB' = 'mysql' ]; then mysql -e 'CREATE DATABASE cakephp_test;'; fi"
   - chmod -R 777 ./app/tmp
-- echo "<?php
+  - echo "<?php
     class DATABASE_CONFIG {
     private \$identities = array(
       'mysql' => array(
@@ -70,6 +70,7 @@ before_script:
     }
     }" > app/Config/database.php
   - mysql cakephp_test < app/Config/sql/mysql.sql
+  
 script:
   - mkdir -p build/logs
   - cd ./app; ./Console/cake test app AllTests --stderr --coverage-clover ../build/logs/clover.xml
