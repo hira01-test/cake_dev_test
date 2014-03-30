@@ -69,7 +69,7 @@ before_script:
   
 script:
   - mkdir -p build/logs
-  - cd ./app; ./Console/cake test app AllTests --stderr --coverage-clover ../build/logs/clover.xml
+  - cd ./app; ./Console/cake test app AllTests --stderr --coverage-clover ../build/logs/clover.xml --configuration ../phpunit.xml.dist
 
 after_script:
   - php vendor/bin/coveralls -v
