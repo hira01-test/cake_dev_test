@@ -39,4 +39,5 @@ class AllTests extends PHPUnit_Framework_TestSuite
         $suite->addTestDirectory(APP_TEST_CASES . DS . 'Controller');
         return $suite;
     }
+
 }
