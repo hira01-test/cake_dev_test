@@ -71,5 +71,5 @@ script:
   - mkdir -p build/logs
   - cd ./app; ./Console/cake test app AllTests --stderr --coverage-clover ../build/logs/clover.xml
 
-#after_script:
-#  - php vendor/bin/coveralls -v
+after_script:
+  - php vendor/bin/coveralls -v
