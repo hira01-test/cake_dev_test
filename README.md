@@ -6,5 +6,9 @@ coverallsのテスト
 [![Coverage Status](https://coveralls.io/repos/bigplants/cake_dev_test/badge.png?branch=master)](https://coveralls.io/r/bigplants/cake_dev_test?branch=master)   
 test   
 test2   
+test3
+test4
+test5
+
 
 
