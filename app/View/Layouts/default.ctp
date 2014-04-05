@@ -39,6 +39,9 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
     <![endif]-->
 </head>
 <body>
+<?php if (extension_loaded('newrelic')) {
+    echo newrelic_get_browser_timing_header();
+} ?>
 <div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -134,6 +137,10 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                         href="http://www.google.com/webfonts" rel="nofollow">Google</a>.</p>
             </div>
         </div>
+        <?php if (extension_loaded('newrelic')) {
+            echo newrelic_get_browser_timing_footer();
+        } ?>
+
     </footer>
 
 </div>
