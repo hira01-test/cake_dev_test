@@ -47,6 +47,8 @@ class UsersController extends AppController
             $this->User->create();
             if ($this->User->save($this->request->data)) {
                 $this->Session->setFlash(__('The user has been saved.'));
+                $this->Mp->track('Add User');
+
                 return $this->redirect(array('action' => 'index'));
             }
             else {
@@ -69,6 +71,7 @@ class UsersController extends AppController
         }
         if ($this->request->is(array('post', 'put'))) {
             if ($this->User->save($this->request->data)) {
+                $this->Mp->track('Edit User');
                 $this->Session->setFlash(__('The user has been saved.'));
                 return $this->redirect(array('action' => 'index'));
             }
