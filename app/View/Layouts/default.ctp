@@ -78,7 +78,6 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
             }
         })(document, window.mixpanel || []);
         mixpanel.init("2486fb1ff5a70a2e0c1abf3e0bc7788d");
-        mixpanel.track("Track Test");
     </script>
     <!-- end Mixpanel -->
 </head>
