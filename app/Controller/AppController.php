@@ -20,6 +20,7 @@ App::uses('Controller', 'Controller');
  *
  * @package        app.Controller
  * @link        http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
+ *
  */
 class AppController extends Controller
 {
@@ -45,11 +46,18 @@ class AppController extends Controller
         'Paginator' => array('className' => 'BoostCake.BoostCakePaginator'),
     );
 
+    /**
+     * Mixpanel
+     * @var MixPanel
+     */
+    public $Mp;
+
     public function beforeFilter()
     {
         parent::beforeFilter();
         //TODO 一時的に全許可
         $this->Auth->allow();
-
+        //mixpanel初期化
+        $this->Mp = Mixpanel::getInstance(MIXPANEL_PROJECT_TOKEN);
     }
 }

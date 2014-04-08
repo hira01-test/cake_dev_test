@@ -117,3 +117,7 @@ App::build(array(
     )
 );
 CakePlugin::loadAll();
+
+
+//定数
+define('MIXPANEL_PROJECT_TOKEN', "2486fb1ff5a70a2e0c1abf3e0bc7788d");

@@ -35,7 +35,6 @@ class AllTests extends PHPUnit_Framework_TestSuite
     public static function suite()
     {
         $suite = new CakeTestSuite('All Application Test');
-
         $suite->addTestDirectory(APP_TEST_CASES . DS . 'Controller');
         $suite->addTestDirectory(APP_TEST_CASES . DS . 'Model');
         return $suite;

@@ -34,6 +34,8 @@ class UsersControllerTest extends ControllerTestCase
      */
     public function testIndex()
     {
+        $this->testAction('/users/index');
+        $this->assertTextContains('Users', $this->view); // (2)
     }
 
     /**
