@@ -17,12 +17,13 @@ class UsersController extends AppController
     /**
      * index method
      *
-     * @return void
+     * @return $this->render()
      */
     public function index()
     {
         $this->User->recursive = 0;
         $this->set('users', $this->Paginator->paginate());
+        return $this->render();
     }
 
     /**
@@ -30,7 +31,7 @@ class UsersController extends AppController
      *
      * @throws NotFoundException
      * @param string $id
-     * @return void
+     * @return $this->render()
      */
     public function view($id = null)
     {
@@ -39,12 +40,13 @@ class UsersController extends AppController
         }
         $options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
         $this->set('user', $this->User->find('first', $options));
+        return $this->render();
     }
 
     /**
      * add method
      *
-     * @return void
+     * @return $this->render()
      */
     public function add()
     {
@@ -53,13 +55,13 @@ class UsersController extends AppController
             if ($this->User->save($this->request->data)) {
                 $this->Session->setFlash(__('The user has been saved.'));
                 $this->Mp->track('Add User');
-
                 return $this->redirect(array('action' => 'index'));
             }
             else {
                 $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
             }
         }
+        return $this->render();
     }
 
     /**
@@ -67,7 +69,7 @@ class UsersController extends AppController
      *
      * @throws NotFoundException
      * @param string $id
-     * @return void
+     * @return $this->render()
      */
     public function edit($id = null)
     {
@@ -88,6 +90,7 @@ class UsersController extends AppController
             $options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
             $this->request->data = $this->User->find('first', $options);
         }
+        return $this->render();
     }
 
     /**
