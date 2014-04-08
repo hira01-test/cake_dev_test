@@ -1,14 +1,7 @@
 ###説明
 CakePHPで開発環境を整えるテスト   
-travisCIのテスト   
+travisCI   
 [![Build Status](https://travis-ci.org/bigplants/cake_dev_test.svg?branch=master)](https://travis-ci.org/bigplants/master)   
-coverallsのテスト   
+coveralls   
 [![Coverage Status](https://coveralls.io/repos/bigplants/cake_dev_test/badge.png?branch=master)](https://coveralls.io/r/bigplants/cake_dev_test?branch=master)   
-test   
-test2   
-test3
-test4
-test5
-
-
 
