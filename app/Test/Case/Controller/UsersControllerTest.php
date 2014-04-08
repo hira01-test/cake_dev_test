@@ -17,16 +17,6 @@ class UsersControllerTest extends ControllerTestCase
         'app.user'
     );
 
-    function test一足す一は二()
-    {
-        $this->assertEquals(2, 1 + 1);
-    }
-
-    function test2x2equal4()
-    {
-        $this->assertEquals(4, 2 * 2);
-    }
-
     /**
      * testIndex method
      *
@@ -35,7 +25,7 @@ class UsersControllerTest extends ControllerTestCase
     public function testIndex()
     {
         $this->testAction('/users/index');
-        $this->assertTextContains('Users', $this->view); // (2)
+        $this->assertTextContains('Users', $this->view);
     }
 
     /**
